@@ -51,16 +51,20 @@ Example: ```DataBinding2Activity```<br/><br/>
 ```
 <br/>
 Add the custom attribute to your view in the layout file:<br/>
-``` app:toast="@{loginInfo.loginMessage}" ``` <br/>
-  Step 3: Set ```binding.setModel(loginModel);``` in the Activity class<br/>
-  Step 4: Set ```binding.setPresenter(new LoginPresenter());``` in the Activity class<br/>
-  That’s it.<br/>
-  Example: ```DataBinding3Activity```<br/><br/>  
+ ``` app:toast="@{loginInfo.loginMessage}" 
+```
+<br/>
+Step 3: Set ```binding.setModel(new LoginModel());``` in the Activity class.<br/>
+Step 4: Set ``` binding.setPresenter(new LoginPresenter()); ``` in the Activity class.<br/>
+That’s it.<br/>
+Example: ```DataBinding3Activity```<br/><br/>  
   
   
 6. <h4>Implement RecyclerView using Data Binding</h4>
-  Step 1: In layout file, make ```<layout>``` tag as most parent tag or root tag. After adding it, build system will process it for data binding.<br/>
-  Step 2: After above step, binding class will be generated based on same name of layout file (e.g. activity_main’s binding class will be generated as ActivityMainBinding). Set setContentView using DataBindingUtil.<br/>
+  Step 1: In layout file, make ```<layout>``` tag as most parent tag or root tag. <br/>
+  Step 2: Create a custom ```BindingViewHolder``` class for reusability purposes.<br/>
+  Step 3: Create your recyclerview adapter class and item layout class. Set data & variable tag to the layout item class.<br/>
+  Step 4: Set ```binding.recyclerView.setAdapter(adapter);``` to the Activity class <br/>
   That’s it.<br/>
   Example: ```DataBinding4Activity```<br/><br/>
 
