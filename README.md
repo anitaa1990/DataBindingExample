@@ -49,8 +49,12 @@ Example: ```DataBinding2Activity```<br/><br/>
         }
     } 
 ```
-<br/>
-Add the custom attribute to your view in the layout file:<br/> 
+Add the custom attribute to your view in the layout file.i.e. 
+``` app:toast="@{loginInfo.loginMessage}" ```  <br/>
+Step 3: Set ```binding.setModel(new LoginModel());``` in the Activity class.<br/>
+Step 4: Set ``` binding.setPresenter(new LoginPresenter()); ``` in the Activity class.<br/>
+That’s it.<br/>
+Example: ```DataBinding3Activity```<br/><br/> 
   
   
 6. <h4>Implement RecyclerView using Data Binding</h4>
