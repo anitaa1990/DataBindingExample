@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DataBindingSample</string>
+
+
+    <string name="button_1_txt">Use data binding instead of using findViewById()</string>
+    <string name="button_2_txt">Changing the name of DataBinding file and add data from Pojo class without using .setText()</string>
+    <string name="button_3_txt">Custom Data Binding class Example</string>
+    <string name="button_4_txt">Use Data Binding with RecyclerView</string>
+
+
+    <string name="btn_login">Login</string>
+    <string name="btn_reset">Reset</string>
+
+    <string name="title_email">Email</string>
+    <string name="title_pwd">Password</string>
+
+    <string name="hint_pwd">Enter password</string>
+    <string name="hint_email">Enter email</string>
+
+</resources>

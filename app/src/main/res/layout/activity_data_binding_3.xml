@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Step 1-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- Step 2 -->
+    <data>
+
+        <!-- Step 3 -->
+        <variable
+            name="loginInfo"
+            type="com.an.databinding.model.LoginModel" />
+
+
+        <!-- Step 4 -->
+        <variable
+            name="loginPresenter"
+            type="com.an.databinding.presenter.LoginPresenter" />
+    </data>
+
+
+
+    <!-- Step 5 -->
+    <LinearLayout
+        app:toast="@{loginInfo.loginMessage}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+
+
+        <!-- Step 6 -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:error="@{loginInfo.emailError}">
+
+
+            <!-- Step 7 -->
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:text="@={loginInfo.email}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <!-- Step 8 -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:error="@{loginInfo.passwordError}">
+
+
+            <!-- Step 9 -->
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_pwd"
+                android:inputType="textPassword"
+                android:text="@={loginInfo.password}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+
+            <!-- Step 10 -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_reset"
+                android:onClick="@{loginPresenter.reset(loginInfo)}"
+                />
+
+            <!-- Step 11 -->
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_login"
+                android:onClick="@{loginPresenter.login(loginInfo)}"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
